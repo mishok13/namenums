@@ -36,9 +36,13 @@
   "Given a number in range [0, 1000) return its textual representation"
   [n]
   (when (<= 0 n 999)
-    (if-let [name (get simple-numbers n)]
-      name
-      (str n))))
+    (cond
+      (contains? simple-numbers n) (get simple-numbers n)
+      (< n 100) (str (name-it (- n (mod n 10))) "-" (name-it (mod n 10)))
+      (< n 200) (str "hundred and " (name-it (- n 100)))
+      (= 0 (mod n 100)) (str (name-it (quot n 100)) " hundred")
+      (< n 1000) (str (name-it (quot n 100)) " hundred and " (name-it (mod n 100)))
+      :else (str n))))
 
 (defn -main
   [& args]
