@@ -19,6 +19,8 @@
  0 "zero"
  1 "one"
  24 "twenty-four"
+ 45 "fourty-five"
+ 123 "one hundred and twenty-three"
  200 "two hundred"
  240 "two hundred and fourty"
  243 "two hundred and fourty-three"

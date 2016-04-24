@@ -39,7 +39,6 @@
     (cond
       (contains? simple-numbers n) (get simple-numbers n)
       (< n 100) (str (name-it (- n (mod n 10))) "-" (name-it (mod n 10)))
-      (< n 200) (str "hundred and " (name-it (- n 100)))
       (= 0 (mod n 100)) (str (name-it (quot n 100)) " hundred")
       (< n 1000) (str (name-it (quot n 100)) " hundred and " (name-it (mod n 100)))
       :else (str n))))
